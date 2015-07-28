@@ -1,0 +1,23 @@
+# Bracket Style
+style=kr
+
+# Indentation
+indent=spaces=4
+indent-switches
+indent-preproc-define
+indent-preproc-cond
+indent-col1-comments
+
+# Padding
+pad-oper
+unpad-paren
+pad-header
+
+# Formatting
+align-pointer=name
+align-reference=name
+keep-one-line-statements
+convert-tabs
+
+# Other 
+suffix=none
