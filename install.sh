@@ -74,14 +74,14 @@ function init_file () {
 function copy_file () {
 	info "Copying $1"
 	ensure_path "$DEST/$1"
-	cp -a "$ROOT/copy/$1" "$DEST/$1"
+	cp -a "$ROOT/copy/$1" "$DEST/.$1"
 	success "Copied $1"
 }
 
 function link_file () {
 	info "Linking $1"
 	ensure_path "$DEST/$1"
-	ln -sf "$ROOT/link/$1" "$DEST/$1"
+	ln -sf "$ROOT/link/$1" "$DEST/.$1"
 	success "Linked $1"
 }
 
