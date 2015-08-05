@@ -92,7 +92,7 @@ function process () {
 }
 
 # Let's go
-process "link"
-process "copy"
-process "init"
+for job in {link,copy,init} ; do
+	process $job
+done
 
