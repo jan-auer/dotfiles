@@ -1,5 +1,5 @@
-if [ ! -f "$DEST/.zgen.zsh" ]
+if [ ! -d "$DEST/.zgen" ]
 then
-	curl -L https://raw.githubusercontent.com/tarjoilija/zgen/master/zgen.zsh > "$DEST/.zgen.zsh"
+	git clone https://github.com/tarjoilija/zgen.git "$DEST/.zgen"
 fi
 

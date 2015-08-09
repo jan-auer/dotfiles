@@ -1,4 +1,4 @@
-source $HOME/.zgen.zsh
+source $HOME/.zgen/zgen.zsh
 
 # Custom oh-my-zsh confiuration
 DEFAULT_USER="jauer"
