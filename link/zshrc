@@ -20,6 +20,7 @@ if ! zgen saved; then
 
 	# Other third-party plugins
 	zgen load zsh-users/zsh-syntax-highlighting
+	zgen load unixorn/autoupdate-zgen
 
 	# OS specific plugins
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then
