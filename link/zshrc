@@ -1,36 +1,42 @@
-source $HOME/.antigen.zsh
+source $HOME/.zgen.zsh
 
-# Load oh-my-zsh with custom configuration
+# Custom oh-my-zsh confiuration
 DEFAULT_USER="jauer"
 DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="dd.mm.yyyy"
-antigen use oh-my-zsh
 
-# Bundles from oh-my-zsh
-antigen bundle common-aliases
-antigen bundle colored-man
-antigen bundle gitfast
-antigen bundle tmux
-antigen bundle vagrant
+# Build zgen cache if necessary
+if ! zgen saved; then
+	# Load oh-my-zsh
+	zgen oh-my-zsh
 
-# Other plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
+	# Bundles from oh-my-zsh
+	zgen oh-my-zsh plugins/common-aliases
+	zgen oh-my-zsh plugins/colored-man
+	zgen oh-my-zsh plugins/gitfast
+	zgen oh-my-zsh plugins/tmux
+	zgen oh-my-zsh plugins/vagrant
 
-# OS specific plugins
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    # None so far...
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    antigen bundle brew
-    antigen bundle brew-cask
-    antigen bundle osx
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-    antigen bundle cygwin
+	# Other third-party plugins
+	zgen load zsh-users/zsh-syntax-highlighting
+
+	# OS specific plugins
+	if [[ "$OSTYPE" == "linux-gnu" ]]; then
+
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		zgen oh-my-zsh plugins/brew
+		zgen oh-my-zsh plugins/brew-cask
+		zgen oh-my-zsh plugins/osx
+	elif [[ "$OSTYPE" == "cygwin" ]]; then
+		zgen oh-my-zsh plugins/cygwin
+	fi
+
+	# Own settings and overrides
+	zgen load jan-auer/zsh-config
+	zgen load jan-auer/zsh-multiline multiline
+
+	# Save the plugins
+	zgen save
 fi
 
-# Own settings
-antigen bundle jan-auer/zsh-config
-antigen theme jan-auer/zsh-multiline multiline
-
-# Apply all plugins
-antigen apply
