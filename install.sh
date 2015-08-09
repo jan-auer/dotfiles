@@ -85,7 +85,7 @@ function link_file () {
 }
 
 function process () {
-	for file in $(cd "$ROOT/$1" && find -H . -type f) ; do
+	for file in $(cd "$ROOT/$1" && find -H . -type f | sort) ; do
 		"$1_file" "${file:2}"
 	done
 }

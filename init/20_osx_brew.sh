@@ -1,4 +1,4 @@
-is_osx || return 1
+is_osx || return 0
 
 (
 	# Homebrew packages to install
