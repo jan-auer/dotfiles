@@ -66,23 +66,22 @@ DEST="$HOME"
 
 function init_file () {
 	local name="$(basename "$1")"
-	info "Running installer $name"
+	info "Running installer $name\n"
 	source "$ROOT/init/$1"
-	success "Installed $name"
+		success "Installed $name" ||
+		fail "Installer $name completed with errors"
 }
 
 function copy_file () {
 	info "Copying $1"
 	ensure_path "$DEST/$1"
-	cp -a "$ROOT/copy/$1" "$DEST/.$1"
-	success "Copied $1"
+	cp -a "$ROOT/copy/$1" "$DEST/.$1" && success "Copied $1" || fail "Linking $1 failed"
 }
 
 function link_file () {
 	info "Linking $1"
 	ensure_path "$DEST/$1"
-	ln -sf "$ROOT/link/$1" "$DEST/.$1"
-	success "Linked $1"
+	ln -sf "$ROOT/link/$1" "$DEST/.$1" && success "Linked $1" || fail "Copying $1 failed"
 }
 
 function process () {

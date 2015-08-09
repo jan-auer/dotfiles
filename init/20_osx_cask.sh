@@ -46,5 +46,5 @@ is_osx || return 1
 	done
 
 	# Cleanup after install
-	brew cask cleanup
+	brew cask cleanup > /dev/null
 )
