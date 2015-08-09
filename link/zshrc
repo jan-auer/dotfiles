@@ -8,7 +8,6 @@ HIST_STAMPS="dd.mm.yyyy"
 antigen use oh-my-zsh
 
 # Bundles from oh-my-zsh
-antigen bundle bower
 antigen bundle common-aliases
 antigen bundle colored-man
 antigen bundle gitfast
@@ -35,4 +34,3 @@ antigen theme jan-auer/zsh-multiline multiline
 
 # Apply all plugins
 antigen apply
-
