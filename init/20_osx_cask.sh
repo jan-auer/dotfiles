@@ -22,6 +22,7 @@ is_osx || return 0
 		java
 		jdownloader
 		mou
+		osxfuse
 		phpstorm
 		pycharm
 		qlcolorcode
