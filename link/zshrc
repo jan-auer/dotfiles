@@ -8,6 +8,8 @@ HIST_STAMPS="dd.mm.yyyy"
 
 # Build zgen cache if necessary
 if ! zgen saved; then
+	zgen load unixorn/autoupdate-zgen
+
 	# Load oh-my-zsh
 	zgen oh-my-zsh
 
@@ -20,7 +22,6 @@ if ! zgen saved; then
 
 	# Other third-party plugins
 	zgen load zsh-users/zsh-syntax-highlighting
-	zgen load unixorn/autoupdate-zgen
 
 	# OS specific plugins
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then
