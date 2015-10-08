@@ -10,6 +10,7 @@ is_osx || return 0
 		ctags
 		dos2unix
 		git
+		gradle
 		node
 		optipng
 		ssh-copy-id
