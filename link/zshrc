@@ -15,7 +15,7 @@ if ! zgen saved; then
 
 	# Bundles from oh-my-zsh
 	zgen oh-my-zsh plugins/common-aliases
-	zgen oh-my-zsh plugins/colored-man
+	zgen oh-my-zsh plugins/colored-man-pages
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/tmux
 	zgen oh-my-zsh plugins/vagrant
