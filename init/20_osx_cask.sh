@@ -4,6 +4,7 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
+		android
 		atom
 		clion
 		djview
@@ -17,6 +18,7 @@ is_osx || return 0
 		inkscape
 		insync
 		intellij-idea
+		intel-haxm
 		istumbler
 		iterm2
 		java
