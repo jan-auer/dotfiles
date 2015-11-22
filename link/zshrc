@@ -3,6 +3,7 @@ source $HOME/.zgen/zgen.zsh
 # Custom oh-my-zsh confiuration
 DEFAULT_USER="jauer"
 DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_UPDATE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="dd.mm.yyyy"
 
