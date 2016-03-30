@@ -65,4 +65,5 @@
 [push]
 	default = matching
 [user]
+	name = Jan Michael Auer
 	useconfigonly = true
