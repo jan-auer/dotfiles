@@ -17,11 +17,13 @@ if ! zgen saved; then
 	# Bundles from oh-my-zsh
 	zgen oh-my-zsh plugins/common-aliases
 	zgen oh-my-zsh plugins/colored-man-pages
+	zgen oh-my-zsh plugins/docker
+	zgen oh-my-zsh plugins/docker-compose
+	zgen oh-my-zsh plugins/extract
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/tmux
 	zgen oh-my-zsh plugins/vagrant
-	zgen oh-my-zsh plugins/docker
-	zgen oh-my-zsh plugins/docker-compose
+	zgen oh-my-zsh plugins/z
 
 	# Other third-party plugins
 	zgen load zsh-users/zsh-syntax-highlighting
