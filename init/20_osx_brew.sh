@@ -3,14 +3,12 @@ is_osx || return 0
 (
 	# Homebrew packages to install
 	packages=(
-		astyle
+		android-sdk
 		caskroom/cask/brew-cask
 		cmake
 		colordiff
-		ctags
 		dos2unix
 		git
-		gradle
 		node
 		optipng
 		ssh-copy-id
@@ -21,6 +19,7 @@ is_osx || return 0
 		watch
 		wget
 		xz
+		yarn
 	)
 
 	# Install homebrew first
