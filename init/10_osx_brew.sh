@@ -4,7 +4,6 @@ is_osx || return 0
 	# Homebrew packages to install
 	packages=(
 		android-sdk
-		caskroom/cask/brew-cask
 		cmake
 		colordiff
 		dos2unix

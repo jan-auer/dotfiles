@@ -4,16 +4,19 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
+		android-studio
 		atom
 		dropbox
 		firefox
 		flux
 		flycut
+		franz
 		google-chrome
 		insync
 		intel-haxm
 		iterm2
 		java
+		jetbrains-toolbox
 		mou
 		osxfuse
 		qlcolorcode
@@ -26,6 +29,7 @@ is_osx || return 0
 		spotify
 		teamviewer
 		texpad
+		tunnelblick
 		vlc
 	)
 
