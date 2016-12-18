@@ -12,11 +12,13 @@ is_osx || return 0
 		flycut
 		franz
 		google-chrome
+		hyperdock
 		insync
 		intel-haxm
 		iterm2
 		java
 		jetbrains-toolbox
+		microsoft-office
 		mou
 		osxfuse
 		qlcolorcode
