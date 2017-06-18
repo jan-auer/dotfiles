@@ -3,20 +3,16 @@ is_osx || return 0
 (
 	# Homebrew packages to install
 	packages=(
-		android-sdk
 		cmake
 		colordiff
 		dos2unix
 		git
 		node
-		optipng
 		ssh-copy-id
 		thefuck
 		tmux
-		tree
-		vim
 		watch
-		wget
+		watchman
 		xz
 		yarn
 	)
