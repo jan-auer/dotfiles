@@ -23,6 +23,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/virtualenv
 	zgen oh-my-zsh plugins/virtualenvwrapper
+	zgen oh-my-zsh plugins/yarn
 	zgen oh-my-zsh plugins/z
 
 	# Other third-party plugins
