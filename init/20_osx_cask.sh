@@ -4,27 +4,26 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
-		android-studio
 		atom
+		betterzipql
+		day-o
 		dropbox
 		firefox
-		flux
 		flycut
 		franz
 		google-chrome
+		google-drive
+		handbrake
 		hyperdock
-		insync
-		intel-haxm
 		iterm2
 		java
 		jetbrains-toolbox
 		microsoft-office
-		mou
-		osxfuse
-		qlcolorcode
 		qlimagesize
 		qlmarkdown
 		qlprettypatch
+		qlstephen
+		qlvideo
 		quicklook-csv
 		quicklook-json
 		skype
