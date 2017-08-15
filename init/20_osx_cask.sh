@@ -4,7 +4,6 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
-		atom
 		betterzipql
 		day-o
 		dropbox
@@ -18,6 +17,7 @@ is_osx || return 0
 		iterm2
 		java
 		jetbrains-toolbox
+		jitouch
 		microsoft-office
 		qlimagesize
 		qlmarkdown
@@ -31,6 +31,7 @@ is_osx || return 0
 		teamviewer
 		texpad
 		tunnelblick
+		visual-studio-code
 		vlc
 	)
 
