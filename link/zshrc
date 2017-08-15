@@ -21,6 +21,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/docker-compose
 	zgen oh-my-zsh plugins/extract
 	zgen oh-my-zsh plugins/gitfast
+	zgen oh-my-zsh plugins/github
 	zgen oh-my-zsh plugins/virtualenv
 	zgen oh-my-zsh plugins/virtualenvwrapper
 	zgen oh-my-zsh plugins/yarn

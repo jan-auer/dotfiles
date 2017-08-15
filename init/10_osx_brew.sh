@@ -7,6 +7,7 @@ is_osx || return 0
 		colordiff
 		dos2unix
 		git
+		hub
 		node
 		ssh-copy-id
 		thefuck
