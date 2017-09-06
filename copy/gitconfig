@@ -7,10 +7,10 @@
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
 	# Pull with rebase
-	pr = pull --rebase
+	p = pull --rebase
+  # Create a pull-request with hub
+	pr = pull-request
 	# Clone a repository including all submodules
 	cr = clone --recursive
 	# Commit all changes
