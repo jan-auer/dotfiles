@@ -63,7 +63,7 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 [push]
-	default = matching
+	default = simple
 [user]
 	name = Jan Michael Auer
 	useconfigonly = true
