@@ -9,8 +9,6 @@ HIST_STAMPS="dd.mm.yyyy"
 
 # Build zgen cache if necessary
 if ! zgen saved; then
-	zgen load unixorn/autoupdate-zgen
-
 	# Load oh-my-zsh
 	zgen oh-my-zsh
 
@@ -18,15 +16,10 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/cargo
 	zgen oh-my-zsh plugins/common-aliases
 	zgen oh-my-zsh plugins/colored-man-pages
-	zgen oh-my-zsh plugins/docker
-	zgen oh-my-zsh plugins/docker-compose
 	zgen oh-my-zsh plugins/extract
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/github
 	zgen oh-my-zsh plugins/rust
-	zgen oh-my-zsh plugins/virtualenv
-	zgen oh-my-zsh plugins/virtualenvwrapper
-	zgen oh-my-zsh plugins/yarn
 	zgen oh-my-zsh plugins/z
 
 	# Other third-party plugins
@@ -43,10 +36,29 @@ if ! zgen saved; then
 	fi
 
 	# Own settings and overrides
-	zgen load jan-auer/zsh-config
 	zgen load jan-auer/zsh-multiline multiline
 
 	# Save the plugins
 	zgen save
 fi
+
+# Set environment behavior
+export PAGER="less -FRX"
+export EDITOR=vim
+export VISUAL=vim
+
+# Revert cp, mv and rm to default
+# Commands are probably aliased by oh-my-zsh
+unalias cp 2> /dev/null
+unalias mv 2> /dev/null
+unalias rm 2> /dev/null
+
+# Prevent python bytecode
+export PYTHONDONTWRITEBYTECODE=1
+
+# Create a new directory and enter it
+# From https://github.com/mathiasbynens/dotfiles
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
 
