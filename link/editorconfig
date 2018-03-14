@@ -10,11 +10,7 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-[*.{js,css,less,scss,yml}]
-indent_style = space
-indent_size = 2
-
-[{package.json,.travis.yml}]
+[*.{js,json,jsx,css,scss,less,yml}]
 indent_style = space
 indent_size = 2
 
