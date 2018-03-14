@@ -3,15 +3,18 @@ is_osx || return 0
 (
 	# Homebrew packages to install
 	packages=(
+		clang-format
 		cmake
 		colordiff
 		dos2unix
 		git
+		heroku
 		hub
 		node
+		rbenv
 		ssh-copy-id
-		thefuck
 		tmux
+		vim
 		watch
 		watchman
 		xz

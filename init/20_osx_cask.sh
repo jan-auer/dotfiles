@@ -5,20 +5,20 @@ is_osx || return 0
 	casks=(
 		1password
 		betterzipql
+		charles
 		day-o
+	  docker
 		dropbox
 		firefox
 		flycut
-		franz
 		google-chrome
 		google-drive
 		handbrake
-		hyperdock
+		hex-fiend
 		iterm2
 		java
 		jetbrains-toolbox
 		jitouch
-		microsoft-office
 		qlimagesize
 		qlmarkdown
 		qlprettypatch
