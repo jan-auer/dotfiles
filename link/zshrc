@@ -20,6 +20,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/github
 	zgen oh-my-zsh plugins/rust
+	zgen oh-my-zsh plugins/virtualenv
 	zgen oh-my-zsh plugins/z
 
 	# Other third-party plugins
@@ -61,4 +62,7 @@ export PYTHONDONTWRITEBYTECODE=1
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
+
+# Lazily load virtualenvwrapper to improve startup time
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 
