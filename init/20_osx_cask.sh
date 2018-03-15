@@ -6,6 +6,7 @@ is_osx || return 0
 		1password
 		betterzipql
 		charles
+		daisydisk
 		day-o
 	  docker
 		dropbox
