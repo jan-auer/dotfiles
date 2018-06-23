@@ -12,8 +12,10 @@ is_osx || return 0
 		hub
 		node
 		rbenv
+		ripgrep
 		ssh-copy-id
 		tmux
+		unrar
 		vim
 		watch
 		watchman
