@@ -64,7 +64,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Interface plugins
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 
