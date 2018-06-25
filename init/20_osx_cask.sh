@@ -6,6 +6,7 @@ is_osx || return 0
 		1password
 		betterzipql
 		charles
+		coconutbattery
 		daisydisk
 		day-o
 	  docker
@@ -18,8 +19,6 @@ is_osx || return 0
 		hex-fiend
 		iterm2
 		java
-		jetbrains-toolbox
-		jitouch
 		qlimagesize
 		qlmarkdown
 		qlprettypatch
