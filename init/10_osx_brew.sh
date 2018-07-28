@@ -10,6 +10,7 @@ is_osx || return 0
 		git
 		heroku
 		hub
+		mas
 		node
 		rbenv
 		ripgrep
