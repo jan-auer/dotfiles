@@ -36,7 +36,7 @@ is_osx || return 0
 	)
 
 	# Install the casks
-	for package in ${packages[@]} ; do
+	for package in ${casks[@]} ; do
 		brew cask ls $package > /dev/null 2>&1 || brew cask install $package
 	done
 
