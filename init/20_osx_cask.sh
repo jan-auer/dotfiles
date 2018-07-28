@@ -19,6 +19,7 @@ is_osx || return 0
 		hex-fiend
 		iterm2
 		java
+		ngrok
 		qlimagesize
 		qlmarkdown
 		qlprettypatch
