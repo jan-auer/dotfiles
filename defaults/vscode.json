@@ -1,0 +1,63 @@
+{
+  // General settings
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false,
+  },
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80
+  ],
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "onWindowChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "git.autofetch": true,
+  "search.smartCase": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontFamily": "'Meslo LG S DZ for Powerline'",
+  "window.newWindowDimensions": "inherit",
+  "workbench.commandPalette.preserveInput": true,
+  "workbench.startupEditor": "none",
+  "zenMode.fullScreen": false,
+  // Plugin Settings
+  "eslint.autoFixOnSave": true,
+  "tslint.autoFixOnSave": true,
+  "rust-client.channel": "stable",
+  "rust.cfg_test": true,
+  // Language Settings
+  "[python]": {
+    "editor.tabSize": 4,
+  },
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.rulers": [
+      100
+    ]
+  },
+  "[json]": {
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+  },
+  // Color theme overrides
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#00637a",
+    "editor.selectionHighlightBackground": "#005a6f99"
+  },
+  // Git Lens
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.historyExplorer.location": "scm",
+  "gitlens.gitExplorer.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.statusBar.enabled": false
+}
