@@ -8,14 +8,11 @@ is_osx || return 0
 		colordiff
 		dos2unix
 		git
-		heroku
 		hub
 		mas
 		node
-		rbenv
 		ripgrep
 		ssh-copy-id
-		tmux
 		unrar
 		vim
 		watch
