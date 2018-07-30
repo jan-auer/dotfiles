@@ -26,6 +26,7 @@
   // Plugin Settings
   "eslint.autoFixOnSave": true,
   "tslint.autoFixOnSave": true,
+  "python.venvPath": "~/.virtualenvs",
   "rust-client.channel": "stable",
   "rust.cfg_test": true,
   // Language Settings
