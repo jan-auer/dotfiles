@@ -7,6 +7,10 @@ set t_Co=256
 set term=xterm-256color
 set termencoding=utf-8
 
+" Optimize vim for fast TTY
+set ttyfast
+set lazyredraw
+
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
@@ -26,8 +30,6 @@ set modeline
 set modelines=4
 " Enable line numbers
 set number
-" Highlight current line
-" set cursorline
 " Smart tabs
 set noet sts=0 sw=2 ts=2
 set cindent
