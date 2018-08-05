@@ -74,13 +74,6 @@ Plugin 'airblade/vim-gitgutter'
 
 " Editing plugins
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
-
-" Language extensions
-Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
