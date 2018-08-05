@@ -54,6 +54,9 @@ set showmode
 set showcmd
 " Start scrolling five lines before the horizontal window border
 set scrolloff=5
+" Set standard text width for rewrapping to 80 characters
+set textwidth=80
+set colorcolumn=+0
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
