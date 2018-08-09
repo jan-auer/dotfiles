@@ -53,14 +53,19 @@ unalias cp 2> /dev/null
 unalias mv 2> /dev/null
 unalias rm 2> /dev/null
 
-# Prevent python bytecode
-export PYTHONDONTWRITEBYTECODE=1
-
 # Create a new directory and enter it
 # From https://github.com/mathiasbynens/dotfiles
 function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
+
+# Load fzf completion and key bindings
+export FZF_DEFAULT_OPTS='--border --no-height --no-reverse'
+source ~/.fzf.zsh
+alias f=fzf
+
+# Prevent python bytecode
+export PYTHONDONTWRITEBYTECODE=1
 
 # Lazily load virtualenvwrapper to improve startup time
 source /usr/local/bin/virtualenvwrapper_lazy.sh
@@ -76,4 +81,3 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
 		nvm "$@"
 	}
 fi
-

@@ -7,6 +7,7 @@ is_osx || return 0
 		cmake
 		colordiff
 		dos2unix
+		fzf
 		git
 		hub
 		mas
