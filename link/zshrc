@@ -42,6 +42,10 @@ if ! zgen saved; then
 	zgen save
 fi
 
+# Tune history settings
+setopt hist_ignore_all_dups      # Delete old recorded entry if new entry is a duplicate.
+setopt hist_reduce_blanks        # Remove superfluous blanks before recording entry.
+
 # Set environment behavior
 export PAGER="less -FRX"
 export EDITOR=vim
