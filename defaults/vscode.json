@@ -1,7 +1,7 @@
 {
   // General settings
   "editor.codeActionsOnSave": {
-    "source.organizeImports": false,
+    "source.organizeImports": false
   },
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
@@ -31,7 +31,7 @@
   "rust.cfg_test": true,
   // Language Settings
   "[python]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   "[rust]": {
     "editor.tabSize": 4,
@@ -42,7 +42,7 @@
   "[json]": {
     "editor.formatOnType": false,
     "editor.formatOnPaste": false,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   // Color theme overrides
   "workbench.colorTheme": "Solarized Dark",
