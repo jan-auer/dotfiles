@@ -86,3 +86,13 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
 		nvm "$@"
 	}
 fi
+
+# Prepend certain keg-only brew formulae to the PATH
+formulae=(
+	postgresql@9.6
+	redis@3.2
+)
+
+for formula in $formulae; do
+	export PATH="/usr/local/opt/$formula/bin:$PATH"
+done
