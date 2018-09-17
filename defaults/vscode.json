@@ -7,9 +7,7 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.tabSize": 2,
   "explorer.confirmDragAndDrop": false,
   "files.autoSave": "onWindowChange",
@@ -28,6 +26,7 @@
   "tslint.autoFixOnSave": true,
   "python.venvPath": "~/.virtualenvs",
   "rust-client.channel": "stable",
+  "rust.clippy_preference": "on",
   "rust.cfg_test": true,
   // Language Settings
   "[python]": {
@@ -35,9 +34,7 @@
   },
   "[rust]": {
     "editor.tabSize": 4,
-    "editor.rulers": [
-      100
-    ]
+    "editor.rulers": [100]
   },
   "[json]": {
     "editor.formatOnType": false,
