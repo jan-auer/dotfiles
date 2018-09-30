@@ -11,6 +11,7 @@ is_osx || return 0
 		git
 		hub
 		mas
+		nmap
 		node
 		ripgrep
 		ssh-copy-id
