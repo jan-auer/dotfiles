@@ -68,7 +68,7 @@ function mkd() {
 
 # Load fzf completion and key bindings
 export FZF_CTRL_R_OPTS='--no-preview'
-FZF_PREVIEW='[[ $(file -bI {} | cut -d/ -f1) == "text" ]] && head -$LINES {} | pygmentize -l $(pygmentize -N {}) || file -b {}'
+FZF_PREVIEW='[[ $(file -bI {} | cut -d/ -f1) == "text" ]] && bat -n --theme TwoDark {} --line-range 1:$LINES --color always || file -b {}'
 export FZF_DEFAULT_OPTS="--margin 1,0 --no-height --no-reverse --preview-window up:75% --preview '$FZF_PREVIEW'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 source ~/.fzf.zsh
