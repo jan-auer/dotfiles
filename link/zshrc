@@ -25,6 +25,7 @@ if ! zgen saved; then
 
 	# Other third-party plugins
 	zgen load zsh-users/zsh-syntax-highlighting
+	zgen load zsh-users/zsh-apple-touchbar
 
 	# OS specific plugins
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then
