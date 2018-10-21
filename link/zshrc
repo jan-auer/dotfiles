@@ -58,6 +58,7 @@ export VISUAL=vim
 unalias cp 2> /dev/null
 unalias mv 2> /dev/null
 unalias rm 2> /dev/null
+unalias fd 2> /dev/null
 
 # Create a new directory and enter it
 # From https://github.com/mathiasbynens/dotfiles
