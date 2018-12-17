@@ -28,6 +28,7 @@
   "rust-client.channel": "stable",
   "rust.clippy_preference": "on",
   "rust.cfg_test": true,
+  "rust-client.rlsPath": "rls",
   // Language Settings
   "[python]": {
     "editor.tabSize": 4
@@ -51,11 +52,8 @@
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
-  "gitlens.historyExplorer.enabled": true,
-  "gitlens.historyExplorer.location": "scm",
-  "gitlens.gitExplorer.enabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.statusBar.enabled": false
+  "gitlens.statusBar.reduceFlicker": true,
+  "gitlens.views.repositories.enabled": false
 }
