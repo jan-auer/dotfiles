@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 source $HOME/.zgen/zgen.zsh
 
 # Custom oh-my-zsh confiuration
