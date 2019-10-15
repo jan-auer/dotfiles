@@ -120,3 +120,8 @@ export VOLTA_HOME="$HOME/.volta"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# Shorthand for SSH into travis
+function travis_debug {
+	curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "Travis-API-Version: 3" -H "Authorization: token zAEq_lMdUcMJySRtM7__0g" -d '{ "quiet": true }' https://api.travis-ci.com/job/$1/debug
+}
+
