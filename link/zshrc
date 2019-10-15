@@ -49,6 +49,15 @@ fi
 setopt hist_ignore_all_dups      # Delete old recorded entry if new entry is a duplicate.
 setopt hist_reduce_blanks        # Remove superfluous blanks before recording entry.
 
+# Set the term language
+export LANG=en
+export LC_COLLATE=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_MESSAGES=en_US.UTF-8
+export LC_MONETARY=de_DE.UTF-8
+export LC_NUMERIC=de_DE.UTF-8
+export LC_TIME=de_DE.UTF-8
+
 # Set environment behavior
 export PAGER="less -FRX"
 export EDITOR=vim
