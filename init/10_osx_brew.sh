@@ -11,6 +11,7 @@ is_osx || return 0
 		fd
 		fzf
 		git
+		htop
 		hub
 		mas
 		nmap
