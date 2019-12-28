@@ -112,10 +112,9 @@ if (( $+commands[bat] )); then
 	alias cat=bat
 fi
 
-
+# Configure volta (Node version manager)
 export VOLTA_HOME="$HOME/.volta"
 [ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
-
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Shorthand for SSH into travis
