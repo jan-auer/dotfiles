@@ -27,7 +27,6 @@ if ! zgen saved; then
 	# Other third-party plugins
 	zgen load zsh-users/zsh-syntax-highlighting
 	zgen load andrewferrier/fzf-z
-	zgen load marzocchi/zsh-notify
 
 	# OS specific plugins
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then
