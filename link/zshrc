@@ -20,6 +20,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/extract
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/github
+	zgen oh-my-zsh plugins/golang
 	zgen oh-my-zsh plugins/rust
 	zgen oh-my-zsh plugins/virtualenv
 	zgen oh-my-zsh plugins/z
@@ -110,6 +111,12 @@ if (( $+commands[bat] )); then
 	export BAT_THEME=TwoDark
 	export BAT_STYLE=plain
 	alias cat=bat
+fi
+
+# Configure GOPATH
+if (( $+commands[go] )); then
+	export GOPATH="$HOME/Coding/go"
+	export PATH="$PATH:$GOPATH/bin"
 fi
 
 # Configure volta (Node version manager)
