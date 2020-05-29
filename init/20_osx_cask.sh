@@ -4,7 +4,6 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
-		betterzipql
 		charles
 		coconutbattery
 		daisydisk
@@ -13,27 +12,29 @@ is_osx || return 0
 		dropbox
 		firefox
 		flycut
+		glance
 		google-chrome
-		google-drive
 		handbrake
 		hex-fiend
 		iterm2
 		java
+		jiggler
+		microsoft-office
 		ngrok
+		parallels
+		paw
 		qlimagesize
-		qlmarkdown
 		qlprettypatch
 		qlstephen
 		qlvideo
-		quicklook-csv
-		quicklook-json
 		skype
+		sonos
 		spotify
-		teamviewer
 		texpad
-		tunnelblick
+		viscosity
 		visual-studio-code
 		vlc
+		wireshark
 	)
 
 	# Install the casks
