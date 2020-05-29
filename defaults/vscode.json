@@ -25,7 +25,7 @@
   // Plugin Settings
   "python.venvPath": "~/.virtualenvs",
   "rust-analyzer.checkOnSave.command": "clippy",
-  "rust-analyzer.inlayHints.enable": false
+  "rust-analyzer.inlayHints.enable": false,
   // Language Settings
   "[python]": {
     "editor.tabSize": 4
@@ -54,5 +54,9 @@
   // React JSX
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  // C++
+  "C_Cpp.updateChannel": "Insiders",
+  "cmake.configureOnOpen": false
+  // Other...
 }
