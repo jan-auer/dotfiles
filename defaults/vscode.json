@@ -23,8 +23,6 @@
   "workbench.startupEditor": "none",
   "zenMode.fullScreen": false,
   // Plugin Settings
-  "eslint.autoFixOnSave": true,
-  "tslint.autoFixOnSave": true,
   "python.venvPath": "~/.virtualenvs",
   "rust-client.channel": "stable",
   "rust.clippy_preference": "on",
