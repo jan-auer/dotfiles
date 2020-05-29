@@ -17,6 +17,7 @@
   "search.smartCase": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "'Meslo LG S DZ for Powerline'",
+  "window.autoDetectColorScheme": true,
   "window.newWindowDimensions": "inherit",
   "workbench.commandPalette.preserveInput": true,
   "workbench.startupEditor": "none",
@@ -42,10 +43,8 @@
   },
   // Color theme overrides
   "workbench.colorTheme": "Solarized Dark",
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#00637a",
-    "editor.selectionHighlightBackground": "#005a6f99"
-  },
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.preferredLightColorTheme": "Solarized Light",
   // Git Lens
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
