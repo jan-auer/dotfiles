@@ -24,8 +24,8 @@
   "zenMode.fullScreen": false,
   // Plugin Settings
   "python.venvPath": "~/.virtualenvs",
-  "rust-client.channel": "stable",
-  "rust.clippy_preference": "on",
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.inlayHints.enable": false
   // Language Settings
   "[python]": {
     "editor.tabSize": 4
