@@ -140,3 +140,7 @@ function travis_debug {
 		https://api.travis-ci.com/job/$1/debug
 }
 
+# Create a new Google Meet and open in the browser
+function meet {
+	open "https://meet.google.com/new?authuser=${1:-1}"
+}
