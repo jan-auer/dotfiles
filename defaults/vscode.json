@@ -9,6 +9,7 @@
   "editor.renderWhitespace": "all",
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "editor.wordWrap": "off",
   "explorer.confirmDragAndDrop": false,
   "files.autoSave": "onWindowChange",
   "files.trimTrailingWhitespace": true,
@@ -17,8 +18,8 @@
   "search.smartCase": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.fontFamily": "'Meslo LG S DZ for Powerline'",
-  "window.autoDetectColorScheme": true,
   "window.newWindowDimensions": "inherit",
+  "window.nativeTabs": true,
   "workbench.commandPalette.preserveInput": true,
   "workbench.startupEditor": "none",
   "zenMode.fullScreen": false,
@@ -26,6 +27,9 @@
   "python.venvPath": "~/.virtualenvs",
   "rust-analyzer.checkOnSave.command": "clippy",
   "rust-analyzer.inlayHints.enable": false,
+  "rust-analyzer.checkOnSave.overrideCommand": null,
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.assist.importMergeBehaviour": "last",
   // Language Settings
   "[python]": {
     "editor.tabSize": 4
@@ -39,8 +43,15 @@
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // Color theme overrides
-  "workbench.colorTheme": "Solarized Dark",
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Solarized Light",
   "workbench.preferredDarkColorTheme": "Solarized Dark",
   "workbench.preferredLightColorTheme": "Solarized Light",
   // Git Lens
@@ -51,12 +62,9 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.statusBar.reduceFlicker": true,
   "gitlens.views.repositories.enabled": false,
-  // React JSX
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   // C++
   "C_Cpp.updateChannel": "Insiders",
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
   // Other...
+  "rewrap.autoWrap.enabled": false
 }
