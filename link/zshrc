@@ -99,18 +99,6 @@ if [ -s /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
 	source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
-# Prepend certain keg-only brew formulae to the PATH
-if (( $+commands[brew] )); then
-	formulae=(
-		postgresql@9.6
-		redis@3.2
-	)
-
-	for formula in $formulae; do
-		export PATH="/usr/local/opt/$formula/bin:$PATH"
-	done
-fi
-
 # Configure bat defaults
 if (( $+commands[bat] )); then
 	export BAT_THEME=TwoDark
@@ -118,32 +106,10 @@ if (( $+commands[bat] )); then
 	alias cat=bat
 fi
 
-# Configure GOPATH
-if (( $+commands[go] )); then
-	export GOPATH="$HOME/Coding/go"
-	export PATH="$PATH:$GOPATH/bin"
-fi
-
 # Configure volta (Node version manager)
 export VOLTA_HOME="$HOME/.volta"
 [ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-# Shorthand for SSH into travis
-function travis_debug {
-	if [ "$#" -ne 1 ]; then
-		echo "Usage: travis_debug <jobid>"
-		return 1
-	fi
-
-	curl -s -X POST \
-		-H "Content-Type: application/json" \
-		-H "Accept: application/json" \
-		-H "Travis-API-Version: 3" \
-		-H "Authorization: token zAEq_lMdUcMJySRtM7__0g" \
-		-d '{ "quiet": true }' \
-		https://api.travis-ci.com/job/$1/debug
-}
 
 # Create a new Google Meet and open in the browser
 function meet {
