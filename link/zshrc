@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-source $HOME/.zgen/zgen.zsh
 
 # Custom oh-my-zsh confiuration
 DEFAULT_USER="jauer"
@@ -7,6 +6,14 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="dd.mm.yyyy"
+
+# Set the theme before loading zgen
+if [ "$(echo $COLORFGBG | cut -d ';' -f2)" -gt 8 ]; then
+	SOLARIZED_THEME="light"
+fi
+
+# Load zgen after initializing variables
+source $HOME/.zgen/zgen.zsh
 
 # Build zgen cache if necessary
 if ! zgen saved; then
@@ -20,8 +27,6 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/extract
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/github
-	zgen oh-my-zsh plugins/golang
-	zgen oh-my-zsh plugins/rust
 	zgen oh-my-zsh plugins/virtualenv
 	zgen oh-my-zsh plugins/z
 
