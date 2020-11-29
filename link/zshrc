@@ -96,7 +96,11 @@ fi
 
 # Configure bat defaults
 if (( $+commands[bat] )); then
-	export BAT_THEME=TwoDark
+	if [ "$(echo $COLORFGBG | cut -d ';' -f2)" -gt 8 ]; then
+		export BAT_THEME="Solarized (light)"
+	else
+		export BAT_THEME="Solarized (dark)"
+	fi
 	export BAT_STYLE=plain
 	alias cat=bat
 fi
