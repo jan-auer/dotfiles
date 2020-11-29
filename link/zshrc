@@ -25,6 +25,7 @@ if ! zgen saved; then
 	zgen oh-my-zsh plugins/common-aliases
 	zgen oh-my-zsh plugins/colored-man-pages
 	zgen oh-my-zsh plugins/extract
+	zgen oh-my-zsh plugins/fzf
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/github
 	zgen oh-my-zsh plugins/virtualenv
@@ -82,14 +83,9 @@ function mkd() {
 }
 
 # Load fzf completion and key bindings
-if (( $+commands[fzf] )); then
-	export FZF_CTRL_R_OPTS='--no-preview'
-	FZF_PREVIEW='[[ $(file -bI {} | cut -d/ -f1) == "text" ]] && bat -n --line-range 1:$LINES --color always {} || file -b {}'
-	export FZF_DEFAULT_OPTS="--margin 1,0 --no-height --no-reverse --preview-window up:75% --preview '$FZF_PREVIEW'"
-	export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-	source ~/.fzf.zsh
-	alias f=fzf
-fi
+export FZF_DEFAULT_OPTS="--no-height"
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+alias f=fzf
 
 # Prevent python bytecode
 export PYTHONDONTWRITEBYTECODE=1
