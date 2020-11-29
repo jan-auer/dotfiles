@@ -82,6 +82,10 @@ export FZF_DEFAULT_OPTS="--no-height"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 alias f=fzf
 
+if [ "$(echo $COLORFGBG | cut -d ';' -f2)" -gt 8 ]; then
+	export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color light"
+fi
+
 # Prevent python bytecode
 export PYTHONDONTWRITEBYTECODE=1
 
