@@ -7,9 +7,10 @@ is_osx || return 0
 		charles
 		coconutbattery
 		daisydisk
-		day-o
 	  docker
 		dropbox
+		encryptme
+		eul
 		firefox
 		flycut
 		glance
@@ -19,6 +20,7 @@ is_osx || return 0
 		iterm2
 		java
 		jiggler
+		kap
 		microsoft-office
 		ngrok
 		parallels

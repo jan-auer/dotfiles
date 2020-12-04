@@ -4,12 +4,12 @@ is_osx || return 0
 	# Homebrew packages to install
 	packages=(
 		bat
-		clang-format
 		cmake
 		colordiff
 		dos2unix
 		fd
 		fzf
+		gh
 		git
 		htop
 		hub
