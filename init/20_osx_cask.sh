@@ -29,6 +29,7 @@ is_osx || return 0
 		qlprettypatch
 		qlstephen
 		qlvideo
+		rectangle
 		skype
 		sonos
 		spotify
