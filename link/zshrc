@@ -112,5 +112,8 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Create a new Google Meet and open in the browser
 function meet {
-	open "https://meet.google.com/new?authuser=${1:-1}"
+	if [ -n "$1" ]; then
+		local authuser="?authuser=$1"
+	fi
+	open "https://meet.google.com/new$authuser"
 }
