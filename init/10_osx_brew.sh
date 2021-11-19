@@ -24,7 +24,6 @@ is_osx || return 0
 		vim
 		volta
 		watch
-		watchman
 		xz
 		yarn
 	)
