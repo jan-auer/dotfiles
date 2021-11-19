@@ -47,7 +47,6 @@ is_osx || return 0
 	done
 
 	# Cleanup after install
-	brew prune
 	brew cleanup
 )
 
