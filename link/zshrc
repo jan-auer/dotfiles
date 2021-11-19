@@ -34,7 +34,7 @@ if ! zgen saved; then
 	if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
-		zgen oh-my-zsh plugins/osx
+		zgen oh-my-zsh plugins/macos
 	elif [[ "$OSTYPE" == "cygwin" ]]; then
 		zgen oh-my-zsh plugins/cygwin
 	fi
