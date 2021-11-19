@@ -13,13 +13,16 @@ is_osx || return 0
 		git
 		htop
 		hub
+		jq
 		mas
 		nmap
-		node
+		python@3.9
 		ripgrep
+		speedtest-cli
 		ssh-copy-id
-		unrar
+		tokei
 		vim
+		volta
 		watch
 		watchman
 		xz

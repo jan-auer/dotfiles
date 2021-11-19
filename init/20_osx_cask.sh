@@ -4,40 +4,37 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
-		charles
+		#charles
 		coconutbattery
 		daisydisk
-	  docker
-		dropbox
-		encryptme
-		eul
-		firefox
+		docker
 		flycut
 		glance
 		google-chrome
+		google-drive
 		handbrake
 		hex-fiend
 		iterm2
 		java
 		jiggler
 		kap
+		#mactex
 		microsoft-office
 		ngrok
-		parallels
-		paw
+		#parallels
+		#paw
 		qlimagesize
 		qlprettypatch
 		qlstephen
 		qlvideo
 		rectangle
-		skype
 		sonos
+		soundflower
 		spotify
-		texpad
+		#texpad
 		viscosity
 		visual-studio-code
 		vlc
-		wireshark
 	)
 
 	# Install the casks
