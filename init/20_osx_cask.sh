@@ -39,9 +39,9 @@ is_osx || return 0
 
 	# Install the casks
 	for package in ${casks[@]} ; do
-		brew cask ls $package > /dev/null 2>&1 || brew cask install $package
+		brew ls --cask $package > /dev/null 2>&1 || brew install --cask $package
 	done
 
 	# Cleanup after install
-	brew cask cleanup > /dev/null
+	brew cleanup -s > /dev/null
 )
