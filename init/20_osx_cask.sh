@@ -15,7 +15,6 @@ is_osx || return 0
 		handbrake
 		hex-fiend
 		iterm2
-		java
 		jiggler
 		kap
 		#mactex
@@ -28,8 +27,7 @@ is_osx || return 0
 		qlstephen
 		qlvideo
 		rectangle
-		sonos
-		soundflower
+		homebrew/cask-drivers/sonos
 		spotify
 		#texpad
 		viscosity
