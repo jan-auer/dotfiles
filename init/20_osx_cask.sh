@@ -8,6 +8,7 @@ is_osx || return 0
 		coconutbattery
 		daisydisk
 		docker
+		dozer
 		flycut
 		glance
 		google-chrome
