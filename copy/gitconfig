@@ -24,10 +24,6 @@
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
-[apply]
-	# Detect whitespace errors when applying a patch
-	whitespace = fix
-
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
@@ -41,29 +37,42 @@
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
 	autocrlf = input
+	# Use delta (git-delta) as diff pager
+	pager = delta
 
-[color]
-	# Use colors in Git commands that are capable of colored output when
-	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-	ui = auto
+[push]
+	default = simple
+
+[apply]
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+[diff]
+	colorMoved = default
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+	conflictstyle = diff3
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
-[color "diff"]
-	meta = yellow
-	frag = magenta
-	old = red
-	new = green
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = blue
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-[push]
-	default = simple
+
+[delta]
+	# Use n and N to move between diff sections.
+	navigate = true
+	# Add hyperlinks to files and commits. Requires less >= 581
+	hyperlinks = true
+
+[hub]
+    protocol = ssh
+
 [user]
 	name = Jan Michael Auer
 	useconfigonly = true

@@ -11,9 +11,11 @@ is_osx || return 0
 		fzf
 		gh
 		git
+		git-delta
 		htop
 		hub
 		jq
+		less
 		mas
 		nmap
 		python@3.9
