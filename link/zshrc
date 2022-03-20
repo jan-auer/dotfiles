@@ -16,13 +16,13 @@ if ! zgen saved; then
 	zgen oh-my-zsh
 
 	# Bundles from oh-my-zsh
-	zgen oh-my-zsh plugins/cargo
 	zgen oh-my-zsh plugins/common-aliases
 	zgen oh-my-zsh plugins/colored-man-pages
 	zgen oh-my-zsh plugins/extract
 	zgen oh-my-zsh plugins/fzf
 	zgen oh-my-zsh plugins/gitfast
 	zgen oh-my-zsh plugins/github
+	zgen oh-my-zsh plugins/rust
 	zgen oh-my-zsh plugins/virtualenv
 	zgen oh-my-zsh plugins/z
 
