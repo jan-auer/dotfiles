@@ -4,7 +4,6 @@ is_osx || return 0
 	# Homebrew packages to install
 	packages=(
 		bat
-		cmake
 		colordiff
 		dos2unix
 		fd
@@ -18,13 +17,11 @@ is_osx || return 0
 		less
 		mas
 		nmap
-		python@3.9
 		ripgrep
 		speedtest-cli
 		ssh-copy-id
 		tokei
 		vim
-		volta
 		watch
 		xz
 		yarn

@@ -4,6 +4,8 @@ is_osx || return 0
 	# Casks to install
 	casks=(
 		1password
+		1password-cli
+		blackhole-2ch
 		#charles
 		coconutbattery
 		daisydisk
@@ -16,7 +18,6 @@ is_osx || return 0
 		handbrake
 		hex-fiend
 		iterm2
-		jiggler
 		kap
 		#mactex
 		microsoft-office
