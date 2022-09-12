@@ -1,30 +1,39 @@
 is_osx || return 0
 
 (
-	# Homebrew packages to install
+	# Base packages
 	packages=(
 		bat
-		colordiff
-		dos2unix
 		fd
 		fzf
 		gh
 		git
 		git-delta
-		htop
 		hub
 		jq
 		less
 		mas
-		nmap
 		ripgrep
-		speedtest-cli
-		ssh-copy-id
-		tokei
 		vim
 		watch
 		xz
+	)
+
+	# Work packages
+	packages += (
+		colordiff
+		dos2unix
+		getsentry/tools/sentry-cli
+		htop
+		nmap
+		tokei
+		volta
 		yarn
+	)
+
+	# Personal packages
+	packages += (
+		exiftool
 	)
 
 	# Install homebrew first

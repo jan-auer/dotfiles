@@ -1,12 +1,10 @@
 is_osx || return 0
 
 (
-	# Casks to install
+	# Base casks
 	casks=(
 		1password
 		1password-cli
-		blackhole-2ch
-		#charles
 		coconutbattery
 		daisydisk
 		docker
@@ -15,25 +13,34 @@ is_osx || return 0
 		glance
 		google-chrome
 		google-drive
-		handbrake
-		hex-fiend
 		iterm2
-		kap
-		#mactex
 		microsoft-office
-		ngrok
-		#parallels
-		#paw
 		qlimagesize
 		qlprettypatch
 		qlstephen
-		qlvideo
+		#qlvideo  # Disabled as it requires rosetta
 		rectangle
 		homebrew/cask-drivers/sonos
 		spotify
-		#texpad
 		viscosity
 		visual-studio-code
+	)
+
+	# Work casks
+	casks += (
+		charles
+		hex-fiend
+		ngrok
+		#parallels
+		paw
+	)
+
+	# Personal casks
+	casks += (
+		blackhole-2ch
+		handbrake
+		mactex
+		texpad
 		vlc
 	)
 
