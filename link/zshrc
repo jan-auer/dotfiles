@@ -83,6 +83,7 @@ function __theme() {
 }
 
 # Load fzf completion and key bindings
+export FZF_DEFAULT_OPTS="--no-height"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 alias f=fzf
 function fzf() {
