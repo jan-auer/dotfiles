@@ -38,7 +38,7 @@
 	trustctime = false
 	autocrlf = input
 	# Use delta (git-delta) as diff pager
-	pager = delta
+	pager = ! "delta --syntax-theme=\"Solarized ($(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark || echo light))\""
 
 [init]
 	defaultBranch = master

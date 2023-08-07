@@ -77,14 +77,17 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+# Function that returns the macOS theme ("light" or "dark")
+function __theme() {
+	defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark || echo light
+}
+
 # Load fzf completion and key bindings
-export FZF_DEFAULT_OPTS="--no-height"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 alias f=fzf
-
-if [ "$(echo $COLORFGBG | cut -d ';' -f2)" -gt 8 ]; then
-	export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color light"
-fi
+function fzf() {
+	command fzf --color=$(__theme) "$@"
+}
 
 # Prevent python bytecode
 export PYTHONDONTWRITEBYTECODE=1
@@ -96,27 +99,15 @@ fi
 
 # Configure bat defaults
 if (( $+commands[bat] )); then
-	if [ "$(echo $COLORFGBG | cut -d ';' -f2)" -gt 8 ]; then
-		export BAT_THEME="Solarized (light)"
-	else
-		export BAT_THEME="Solarized (dark)"
-	fi
-	export BAT_STYLE=plain
-	alias cat=bat
+	function bat() {
+		command bat --theme="Solarized ($(__theme))" --style=plain "$@"
+	}
 fi
 
 # Configure volta (Node version manager)
 export VOLTA_HOME="$HOME/.volta"
 [ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
-# Create a new Google Meet and open in the browser
-function meet {
-	if [ -n "$1" ]; then
-		local authuser="?authuser=$1"
-	fi
-	open "https://meet.google.com/new$authuser"
-}
 
 if [ -s /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ]; then
 	source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
