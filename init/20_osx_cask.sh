@@ -4,13 +4,9 @@ is_osx || return 0
 	# Base casks
 	casks=(
 		1password
-		1password-cli
 		coconutbattery
 		daisydisk
-		docker
-		dozer
-		flycut
-		glance
+		orbstack
 		google-chrome
 		google-drive
 		iterm2
@@ -18,12 +14,13 @@ is_osx || return 0
 		qlimagesize
 		qlprettypatch
 		qlstephen
-		#qlvideo  # Disabled as it requires rosetta
-		rectangle
-		homebrew/cask-drivers/sonos
+		rar
+		raycast
+		sonos
 		spotify
-		viscosity
+		tunnelblick
 		visual-studio-code
+		vlc
 	)
 
 	# Work casks
