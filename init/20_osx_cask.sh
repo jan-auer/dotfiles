@@ -20,6 +20,7 @@ is_osx || return 0
 		tunnelblick
 		visual-studio-code
 		vlc
+		whatsapp
 	)
 
 	# Work casks
