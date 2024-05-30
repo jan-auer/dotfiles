@@ -10,7 +10,6 @@ is_osx || return 0
 		google-chrome
 		google-drive
 		iterm2
-		microsoft-office
 		qlimagesize
 		qlprettypatch
 		qlstephen
