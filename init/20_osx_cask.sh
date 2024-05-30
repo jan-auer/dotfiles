@@ -17,7 +17,6 @@ is_osx || return 0
 		rar
 		raycast
 		sonos
-		spotify
 		tunnelblick
 		visual-studio-code
 		vlc
