@@ -90,6 +90,11 @@ function fzf() {
 	command fzf --color=$(__theme) "$@"
 }
 
+# Load iterm2 shell integration
+if [[ "$LC_TERMINAL" == "iTerm2" ]]; then
+	source $HOME/.iterm2/iterm2_shell_integration.zsh
+fi
+
 # Prevent python bytecode
 export PYTHONDONTWRITEBYTECODE=1
 
