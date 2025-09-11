@@ -9,7 +9,6 @@ is_osx || return 0
 		orbstack
 		google-chrome
 		google-drive
-		home-assistant
 		iterm2
 		qlimagesize
 		qlprettypatch
