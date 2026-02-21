@@ -4,6 +4,7 @@ is_osx || return 0
 	# Base packages
 	packages=(
 		bat
+		docker
 		fd
 		fzf
 		gh
@@ -15,8 +16,8 @@ is_osx || return 0
 		mas
 		ripgrep
 		vim
+		tokei
 		watch
-		xz
 	)
 
 	# Work packages
@@ -26,14 +27,13 @@ is_osx || return 0
 		getsentry/tools/sentry-cli
 		htop
 		nmap
-		tokei
-		volta
-		yarn
 	)
 
 	# Personal packages
 	packages += (
 		exiftool
+		ffmpeg
+		yt-dlp
 	)
 
 	# Install homebrew first

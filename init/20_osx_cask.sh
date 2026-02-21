@@ -4,40 +4,38 @@ is_osx || return 0
 	# Base casks
 	casks=(
 		1password
+		claude-code
 		coconutbattery
 		daisydisk
-		orbstack
+		firefox
 		google-chrome
 		google-drive
 		iterm2
-		qlimagesize
-		qlprettypatch
-		qlstephen
+		microsoft-office
+		orbstack
+		pronotes
 		rar
 		raycast
 		sonos
-		tunnelblick
+		utm
 		visual-studio-code
-		vlc
 		whatsapp
+		yubico-yubikey-manager
 	)
 
 	# Work casks
 	casks += (
-		charles
 		hex-fiend
 		ngrok
-		#parallels
-		paw
 	)
 
 	# Personal casks
 	casks += (
-		blackhole-2ch
 		handbrake
-		mactex
-		texpad
 		vlc
+		# blackhole-2ch
+		# mactex
+		# texpad
 	)
 
 	# Install the casks
