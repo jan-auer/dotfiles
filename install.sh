@@ -91,6 +91,15 @@ function process () {
 }
 
 # Let's go
+user "Install profile - (p)ersonal or (w)ork?"
+read -r install_profile
+case "$install_profile" in
+	p*|P*) export INSTALL_PROFILE="personal" ;;
+	w*|W*) export INSTALL_PROFILE="work" ;;
+	*)     fail "Unknown install profile: $install_profile" ;;
+esac
+success "Using $INSTALL_PROFILE profile"
+
 for job in {link,copy,init} ; do
 	process $job
 done

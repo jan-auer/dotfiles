@@ -38,27 +38,31 @@ is_osx || return 0
 	)
 
 	# Work packages
-	packages += (
-		colordiff
-		dos2unix
-		getsentry/tools/sentry-cli
-		hex-fiend
-		htop
-		ngrok
-		nmap
-	)
+	if [[ "$INSTALL_PROFILE" == "work" ]]; then
+		packages+=(
+			colordiff
+			dos2unix
+			getsentry/tools/sentry-cli
+			hex-fiend
+			htop
+			ngrok
+			nmap
+		)
+	fi
 
 	# Personal packages
-	packages += (
-		exiftool
-		ffmpeg
-		handbrake
-		vlc
-		yt-dlp
-		# blackhole-2ch
-		# mactex
-		# texpad
-	)
+	if [[ "$INSTALL_PROFILE" == "personal" ]]; then
+		packages+=(
+			exiftool
+			ffmpeg
+			handbrake
+			vlc
+			yt-dlp
+			# blackhole-2ch
+			# mactex
+			# texpad
+		)
+	fi
 
 	# Install homebrew first
 	if ! hash brew > /dev/null 2>&1 ; then
