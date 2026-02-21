@@ -3,21 +3,38 @@ is_osx || return 0
 (
 	# Base packages
 	packages=(
+		1password
 		bat
+		claude-code
+		coconutbattery
+		daisydisk
 		docker
 		fd
+		firefox
 		fzf
 		gh
 		git
 		git-delta
+		google-chrome
+		google-drive
 		hub
+		iterm2
 		jq
 		less
 		mas
+		microsoft-office
+		orbstack
+		pronotes
+		raycast
 		ripgrep
-		vim
+		sonos
 		tokei
+		utm
+		vim
+		visual-studio-code
 		watch
+		whatsapp
+		yubico-yubikey-manager
 	)
 
 	# Work packages
@@ -25,7 +42,9 @@ is_osx || return 0
 		colordiff
 		dos2unix
 		getsentry/tools/sentry-cli
+		hex-fiend
 		htop
+		ngrok
 		nmap
 	)
 
@@ -33,7 +52,12 @@ is_osx || return 0
 	packages += (
 		exiftool
 		ffmpeg
+		handbrake
+		vlc
 		yt-dlp
+		# blackhole-2ch
+		# mactex
+		# texpad
 	)
 
 	# Install homebrew first
@@ -48,12 +72,11 @@ is_osx || return 0
 	# Upgrade existing packages
 	brew upgrade
 
-	# Install the packages
+	# Install packages
 	for package in ${packages[@]} ; do
-		brew ls $package > /dev/null 2>&1 || brew install $package
+		brew install $package
 	done
 
 	# Cleanup after install
 	brew cleanup -s
 )
-
