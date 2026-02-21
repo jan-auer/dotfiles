@@ -17,7 +17,7 @@
 tell application "System Events"
     keystroke "c" using {command down}
     delay 0.1
-    set the clipboard to (do shell script "pbpaste | /Users/jauer/.volta/bin/prettier --parser markdown --print-width 72 --prose-wrap always")
+    set the clipboard to (do shell script "pbpaste | /opt/homebrew/bin/prettier --parser markdown --print-width 72 --prose-wrap always")
     delay 0.1
     keystroke "v" using {command down}
 end

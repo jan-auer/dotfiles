@@ -23,6 +23,7 @@ is_osx || return 0
 		less
 		mas
 		microsoft-office
+		prettier
 		orbstack
 		pronotes
 		raycast
