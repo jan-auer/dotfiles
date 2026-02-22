@@ -72,3 +72,5 @@ While iterating, run only the relevant individual test(s). Run the full suite be
 # Tool Constraints
 
 Never run recursive operations (`ls -R`, `find`, `grep -r`, `rg`, `glob`, etc.) rooted at the home directory (`~`) or higher. Scope all file searches and directory listings to the current project folder.
+
+Do not use `git -C` — run git commands from the working directory.
