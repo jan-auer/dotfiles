@@ -79,4 +79,13 @@ is_osx || return 0
 
 	# Cleanup after install
 	brew cleanup -s
+
+	# Show formulae installed on this machine but not in the Brewfile
+	cleanup_output=$(printf '%s\n' "${packages[@]}" | brew bundle cleanup --dry-run --file=- 2>/dev/null)
+	if [[ -n "$cleanup_output" ]]; then
+		warn "These packages are installed but not tracked in the Brewfile:"
+		echo "$cleanup_output"
+		echo ""
+		echo "Add them to 10_osx_brew.sh to track them, or run 'brew uninstall <formula>' to remove them."
+	fi
 )
