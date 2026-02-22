@@ -74,9 +74,6 @@ is_osx || return 0
 	# Make sure everything is up-to-date
 	brew update > /dev/null
 
-	# Upgrade existing packages
-	brew upgrade
-
 	# Install packages
 	printf '%s\n' "${packages[@]}" | brew bundle --no-lock --file=-
 

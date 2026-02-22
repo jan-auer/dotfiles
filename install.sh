@@ -73,15 +73,32 @@ function init_file () {
 }
 
 function copy_file () {
-	info "Copying $1"
-	ensure_path "$DEST/$1"
-	cp -a "$ROOT/copy/$1" "$DEST/.$1" && success "Copied $1" || fail "Linking $1 failed"
+	local src="$ROOT/copy/$1"
+	local dst="$DEST/.$1"
+	ensure_path "$dst"
+
+	if [ -f "$dst" ]; then
+		if diff -q "$src" "$dst" > /dev/null 2>&1; then
+			skip "$1 (unchanged)"
+			return
+		fi
+		echo ""
+		diff -u "$dst" "$src" || true
+		user "Overwrite ~/.$1? (y/n)"
+		read -r overwrite
+		if [[ "$overwrite" != y* ]]; then
+			skip "$1 (kept local version)"
+			return
+		fi
+	fi
+
+	cp -a "$src" "$dst" && success "Copied $1" || fail "Copying $1 failed"
 }
 
 function link_file () {
 	info "Linking $1"
 	ensure_path "$DEST/$1"
-	ln -sf "$ROOT/link/$1" "$DEST/.$1" && success "Linked $1" || fail "Copying $1 failed"
+	ln -sf "$ROOT/link/$1" "$DEST/.$1" && success "Linked $1" || fail "Linking $1 failed"
 }
 
 function process () {
@@ -91,13 +108,15 @@ function process () {
 }
 
 # Let's go
-user "Install profile - (p)ersonal or (w)ork?"
-read -r install_profile
-case "$install_profile" in
-	p*|P*) export INSTALL_PROFILE="personal" ;;
-	w*|W*) export INSTALL_PROFILE="work" ;;
-	*)     fail "Unknown install profile: $install_profile" ;;
-esac
+if [[ -z "$INSTALL_PROFILE" ]]; then
+	user "Install profile - (p)ersonal or (w)ork?"
+	read -r install_profile
+	case "$install_profile" in
+		p*|P*) export INSTALL_PROFILE="personal" ;;
+		w*|W*) export INSTALL_PROFILE="work" ;;
+		*)     fail "Unknown install profile: $install_profile" ;;
+	esac
+fi
 success "Using $INSTALL_PROFILE profile"
 
 for job in {link,copy,init} ; do
