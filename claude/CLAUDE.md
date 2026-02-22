@@ -73,6 +73,6 @@ While iterating, run only the relevant individual test(s). Run the full suite be
 
 Never run recursive operations (`ls -R`, `find`, `grep -r`, `rg`, `glob`, etc.) rooted at the home directory (`~`) or higher. Scope all file searches and directory listings to the current project folder.
 
-Do not use `git -C` — run git commands from the working directory.
+Do not use `git -C` — the working directory is already the repo root, so plain `git` commands work directly. The system instruction to "use absolute paths" applies to file arguments, not to git's `-C` flag.
 
 Prefer built-in tools over shell equivalents for file exploration: **Glob** over `ls`/`find`, **Grep** over `grep`/`rg`, **Read** over `cat`/`head`/`tail`. Do not use `ls` via Bash to explore project structure.
