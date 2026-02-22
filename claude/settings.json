@@ -1,4 +1,5 @@
 {
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(git status *)",
@@ -128,10 +129,15 @@
       "Read(~/.claude/rules/**)",
       "WebSearch",
       "WebFetch"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
     ]
   },
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
-  }
+  },
+  "plansDirectory": "./.claude/plans"
 }
