@@ -12,11 +12,10 @@ RED="\033[31m"
 BLUE="\033[34m"
 DIM="\033[2m"
 
-cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd // ""')
+cwd=$(echo "$input" | jq -r '.workspace.project_dir // .cwd // ""')
 model=$(echo "$input" | jq -r '.model.display_name // ""')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
-total_input=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
-total_output=$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')
+cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 
 # Full path with ~ abbreviation, split into parent and dirname
 dir_name=$(basename "$cwd")
@@ -37,24 +36,11 @@ if git -C "$cwd" rev-parse --git-dir >/dev/null 2>&1; then
   branch=$(git -C "$cwd" symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" rev-parse --short HEAD 2>/dev/null)
   if [ -n "$branch" ]; then
     git_branch="$branch"
-    # Check for dirty working tree (untracked files excluded per DISABLE_UNTRACKED_FILES_DIRTY)
-    if [ -n "$(git -C "$cwd" status --porcelain --untracked-files=no 2>/dev/null)" ]; then
+    # Check for dirty working tree (untracked files and submodules excluded)
+    if [ -n "$(git -C "$cwd" status --porcelain --untracked-files=no --ignore-submodules 2>/dev/null)" ]; then
       git_dirty=1
     fi
   fi
-fi
-
-# Estimate cost (approximate rates for Sonnet/Opus class models in USD per million tokens)
-cost=""
-if [ "$total_input" -gt 0 ] || [ "$total_output" -gt 0 ]; then
-  # Use awk for float arithmetic; rates: $3/M input, $15/M output (conservative estimate)
-  cost=$(awk -v i="$total_input" -v o="$total_output" '
-    BEGIN {
-      c = (i / 1000000 * 3) + (o / 1000000 * 15)
-      if (c < 0.01) printf "< $0.01"
-      else printf "$%.2f", c
-    }
-  ')
 fi
 
 # Context usage color: blue under 80%, red at 80%+
@@ -97,7 +83,8 @@ fi
 
 # Cost (no symbol per request)
 if [ -n "$cost" ]; then
-  parts+=("$(printf "${DIM}%s${RESET}" "$cost")")
+  cost_fmt=$(awk -v c="$cost" 'BEGIN { if (c < 0.01) printf "< $0.01"; else printf "$%.2f", c }')
+  parts+=("$(printf "${DIM}%s${RESET}" "$cost_fmt")")
 fi
 
 # Join with separator
