@@ -3,65 +3,65 @@ is_osx || return 0
 (
 	# Base packages
 	packages=(
-		1password
-		bat
-		claude-code
-		coconutbattery
-		daisydisk
-		docker
-		fd
-		firefox
-		fzf
-		gh
-		git
-		git-delta
-		google-chrome
-		google-drive
-		hub
-		iterm2
-		jq
-		less
-		mas
-		microsoft-office
-		prettier
-		orbstack
-		pronotes
-		raycast
-		ripgrep
-		sonos
-		tokei
-		utm
-		vim
-		visual-studio-code
-		watch
-		whatsapp
-		yubico-yubikey-manager
+		'brew "bat"'
+		'brew "claude-code"'
+		'brew "fd"'
+		'brew "fzf"'
+		'brew "gh"'
+		'brew "git"'
+		'brew "git-delta"'
+		'brew "hub"'
+		'brew "jq"'
+		'brew "less"'
+		'brew "mas"'
+		'brew "prettier"'
+		'brew "ripgrep"'
+		'brew "tokei"'
+		'brew "vim"'
+		'brew "watch"'
+		'cask "1password"'
+		'cask "coconutbattery"'
+		'cask "daisydisk"'
+		'cask "docker"'
+		'cask "firefox"'
+		'cask "google-chrome"'
+		'cask "google-drive"'
+		'cask "iterm2"'
+		'cask "microsoft-office"'
+		'cask "orbstack"'
+		'cask "pronotes"'
+		'cask "raycast"'
+		'cask "sonos"'
+		'cask "utm"'
+		'cask "visual-studio-code"'
+		'cask "whatsapp"'
+		'cask "yubico-yubikey-manager"'
 	)
 
 	# Work packages
 	if [[ "$INSTALL_PROFILE" == "work" ]]; then
 		packages+=(
-			colordiff
-			dos2unix
-			getsentry/tools/sentry-cli
-			hex-fiend
-			htop
-			ngrok
-			nmap
+			'brew "colordiff"'
+			'brew "dos2unix"'
+			'brew "getsentry/tools/sentry-cli"'
+			'brew "htop"'
+			'brew "nmap"'
+			'cask "hex-fiend"'
+			'cask "ngrok"'
 		)
 	fi
 
 	# Personal packages
 	if [[ "$INSTALL_PROFILE" == "personal" ]]; then
 		packages+=(
-			exiftool
-			ffmpeg
-			handbrake
-			vlc
-			yt-dlp
-			# blackhole-2ch
-			# mactex
-			# texpad
+			'brew "exiftool"'
+			'brew "ffmpeg"'
+			'brew "yt-dlp"'
+			# 'brew "blackhole-2ch"'
+			# 'brew "mactex"'
+			'cask "handbrake"'
+			'cask "vlc"'
+			# 'cask "texpad"'
 		)
 	fi
 
@@ -78,9 +78,7 @@ is_osx || return 0
 	brew upgrade
 
 	# Install packages
-	for package in ${packages[@]} ; do
-		brew install $package
-	done
+	printf '%s\n' "${packages[@]}" | brew bundle --no-lock --file=-
 
 	# Cleanup after install
 	brew cleanup -s
