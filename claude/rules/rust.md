@@ -1,3 +1,8 @@
+---
+paths:
+  - "**/*.rs"
+---
+
 # Rust Rules
 
 ## Safety

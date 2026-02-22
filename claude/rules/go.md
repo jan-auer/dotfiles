@@ -1,3 +1,8 @@
+---
+paths:
+  - "**/*.go"
+---
+
 # Go Rules
 
 - Always check error returns — never silently ignore

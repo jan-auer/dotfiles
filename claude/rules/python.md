@@ -1,3 +1,8 @@
+---
+paths:
+  - "**/*.py"
+---
+
 # Python Rules
 
 - Type hints on all function signatures

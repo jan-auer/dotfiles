@@ -1,3 +1,9 @@
+---
+paths:
+  - "**/*.ts"
+  - "**/*.tsx"
+---
+
 # TypeScript Rules
 
 - Never use `any` — use `unknown` + type guards, generics, or `satisfies`
