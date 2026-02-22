@@ -95,6 +95,11 @@ if [[ "$LC_TERMINAL" == "iTerm2" ]]; then
 	source $HOME/.iterm2/iterm2_shell_integration.zsh
 fi
 
+# Initialize direnv correctly
+if (( $+commands[direnv] )); then
+	eval "$(direnv hook zsh)"
+fi
+
 # Prevent python bytecode
 export PYTHONDONTWRITEBYTECODE=1
 
