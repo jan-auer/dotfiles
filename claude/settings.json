@@ -132,7 +132,8 @@
     ],
     "deny": [
       "Read(./.env)",
-      "Read(./.env.*)"
+      "Read(./.env.*)",
+      "Bash(git -C *)"
     ]
   },
   "statusLine": {
