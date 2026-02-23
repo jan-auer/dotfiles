@@ -127,6 +127,7 @@
       "Read(~/.claude/settings.local.json)",
       "Read(~/.claude/skills/**)",
       "Read(~/.claude/rules/**)",
+      "Read(./.claude/plans/**)",
       "WebSearch",
       "WebFetch"
     ],
