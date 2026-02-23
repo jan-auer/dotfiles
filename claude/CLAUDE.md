@@ -75,4 +75,6 @@ Never run recursive operations (`ls -R`, `find`, `grep -r`, `rg`, `glob`, etc.) 
 
 **`git -C` is forbidden and will fail.** The working directory is always the repo root, so plain `git` commands work directly. The system instruction to "use absolute paths" applies to file arguments, not to git flags.
 
+**`index.lock` failures**: If a git operation fails because `.git/index.lock` exists, retry the operation once. If it fails again, ask the user what to do — do not delete the lock file unilaterally.
+
 Prefer built-in tools over shell equivalents for file exploration: **Glob** over `ls`/`find`, **Grep** over `grep`/`rg`, **Read** over `cat`/`head`/`tail`. Do not use `ls` via Bash to explore project structure.
