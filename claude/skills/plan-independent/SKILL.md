@@ -33,9 +33,10 @@ Enter plan mode (`EnterPlanMode`). Explore thoroughly before committing to an ap
 - Check for similar features or prior art in the codebase.
 - Read tests to understand expected behavior and coverage gaps.
 - If the increment involves external APIs, libraries, or tools — verify current behavior via web search, docs, or version checks.
+- Research the web thoroughly for prior art, recommended practices, and best solutions.
 - Check `git blame` and commit messages for files you plan to modify — understand why things are the way they are.
 
-Spend time here. The quality of the plan depends on the depth of research. Do not skip to designing because the direction seems obvious.
+Spend time here. The quality of the plan depends on the depth of research. Do not skip to designing because the direction seems obvious. Research the web and do not rely on training data.
 
 ---
 
@@ -111,12 +112,12 @@ State this in your response.
 
 If reflection reveals something worth codifying, propose a specific change:
 
-| What changed | Where to propose |
-|---|---|
-| Project convention or structure | Project CLAUDE.md / AGENTS.md |
+| What changed                         | Where to propose               |
+| ------------------------------------ | ------------------------------ |
+| Project convention or structure      | Project CLAUDE.md / AGENTS.md  |
 | Cross-project preference or workflow | `~/.claude/CLAUDE.md` (global) |
-| Language/tool-specific rule | `~/.claude/rules/<topic>.md` |
-| Factual observation to remember | Auto-memory |
-| Skill process improvement | This skill file |
+| Language/tool-specific rule          | `~/.claude/rules/<topic>.md`   |
+| Factual observation to remember      | Auto-memory                    |
+| Skill process improvement            | This skill file                |
 
 State what to change, where, why, and the exact wording. Do **not** apply changes — the user reviews and approves.

@@ -29,12 +29,12 @@ Enter plan mode (`EnterPlanMode`) to explore the codebase. This phase is a conve
 
 For each significant design choice:
 
-1. **Research first.** Read relevant code, check existing patterns, search for prior art in the codebase and ecosystem. Do not present options you have not investigated.
+1. **Research first.** Read relevant code, check existing patterns, search for prior art in the codebase and web. Do not present options you have not investigated thoroughly.
 2. **Present options with tradeoffs.** Concrete pros/cons grounded in what you found — not abstract hand-waving. Include effort estimates where relevant.
 3. **Make a recommendation.** State which option you favor and why. The user can override.
 4. **Challenge weak choices.** If the user picks an option with significant downsides, say so clearly. Then respect their decision.
 
-Keep iterations focused. Sequence decisions so earlier choices inform later ones.
+Keep iterations focused. Sequence decisions so earlier choices inform later ones. Research the web and do not rely on training data.
 
 ---
 
@@ -86,12 +86,12 @@ State this in your response.
 
 If reflection reveals something worth codifying, propose a specific change:
 
-| What changed | Where to propose |
-|---|---|
-| Project convention or structure | Project CLAUDE.md / AGENTS.md |
+| What changed                         | Where to propose               |
+| ------------------------------------ | ------------------------------ |
+| Project convention or structure      | Project CLAUDE.md / AGENTS.md  |
 | Cross-project preference or workflow | `~/.claude/CLAUDE.md` (global) |
-| Language/tool-specific rule | `~/.claude/rules/<topic>.md` |
-| Factual observation to remember | Auto-memory |
-| Skill process improvement | This skill file |
+| Language/tool-specific rule          | `~/.claude/rules/<topic>.md`   |
+| Factual observation to remember      | Auto-memory                    |
+| Skill process improvement            | This skill file                |
 
 State what to change, where, why, and the exact wording. Do **not** apply changes — the user reviews and approves.
