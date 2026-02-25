@@ -12,6 +12,7 @@ paths:
 
 ## Code Style
 
+- Group imports in three blocks separated by a blank line, in this order: (1) `std`/`core`/`alloc`, (2) external crates, (3) `self`/`super`/`crate`. This matches rustfmt's `group_imports = "StdExternalCrate"`.
 - No wildcard match arms (`_`) on project-owned enums — handle all variants explicitly
 - No wildcard imports except test modules and designed preludes
 - No complex expressions (chains, closures, async calls) in control flow positions (`match`, `if let`, `let else`, `for`) — extract into a named variable first
