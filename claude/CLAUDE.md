@@ -78,3 +78,11 @@ Never run recursive operations (`ls -R`, `find`, `grep -r`, `rg`, `glob`, etc.) 
 **`index.lock` failures**: If a git operation fails because `.git/index.lock` exists, retry the operation once. If it fails again, ask the user what to do — do not delete the lock file unilaterally.
 
 Prefer built-in tools over shell equivalents for file exploration: **Glob** over `ls`/`find`, **Grep** over `grep`/`rg`, **Read** over `cat`/`head`/`tail`. Do not use `ls` via Bash to explore project structure.
+
+**Never use `gh api` for GitHub data that `gh` subcommands can retrieve.** The `gh api` command is not permitted. Use structured `gh` commands with `--json` instead:
+
+- PR comments: `gh pr view <number> --json comments`
+- PR reviews: `gh pr view <number> --json reviews,latestReviews`
+- PR review + comment detail: `gh pr view <number> --json reviews,comments`
+- Issue comments: `gh issue view <number> --json comments`
+- Human-readable comments: `gh pr view <number> --comments`
