@@ -121,3 +121,6 @@ fi
 
 # NB: This should be run through zgen-init
 compinit -C
+
+# Load local overrides (not tracked in repo)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
