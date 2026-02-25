@@ -1,2 +1,6 @@
 init/90_local.sh
 *.swp
+
+# Claude Code project-local state
+.claude/plans/
+.claude/settings.local.json
