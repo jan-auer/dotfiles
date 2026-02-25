@@ -19,6 +19,10 @@ paths:
 - Conversion prefixes: `as_` (free, borrow→borrow), `to_` (expensive, borrow→owned), `into_` (owned→owned); no bare `from_` when `to_`/`into_` is more ergonomic
 - Consistent word order across related names within a crate
 
+## Verification
+
+- Use `cargo clippy` and `cargo test` for verification — not `cargo build`. Clippy catches everything a plain build does plus lint violations.
+
 ## Maintenance
 
 - When removing code, check if any crate dependencies became unused and remove them from `Cargo.toml`
