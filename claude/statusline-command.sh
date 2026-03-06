@@ -17,6 +17,15 @@ model=$(echo "$input" | jq -r '.model.display_name // ""')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 
+# Detect worktree: strip .claude/worktrees/<name>/... from path
+worktree_name=""
+worktree_pattern="/.claude/worktrees/"
+if [[ "$cwd" == *"$worktree_pattern"* ]]; then
+  worktree_name="${cwd#*$worktree_pattern}"
+  # Show path up to (but not including) .claude/worktrees
+  cwd="${cwd%%$worktree_pattern*}"
+fi
+
 # Full path with ~ abbreviation, split into parent and dirname
 dir_name=$(basename "$cwd")
 [ -z "$dir_name" ] && dir_name="/"
@@ -62,6 +71,11 @@ else
   parts+=("$(printf "❯ %s" "$dir_name")")
 fi
 
+# Worktree name in cyan
+if [ -n "$worktree_name" ]; then
+  parts+=("$(printf "${CYAN}⑂ %s${RESET}" "$worktree_name")")
+fi
+
 # Git branch: green when clean, yellow when dirty
 if [ -n "$git_branch" ]; then
   if [ "$git_dirty" -eq 1 ]; then
@@ -71,31 +85,49 @@ if [ -n "$git_branch" ]; then
   fi
 fi
 
+# Join first line with separator
+line1=""
+sep="$(printf "${DIM} · ${RESET}")"
+for part in "${parts[@]}"; do
+  if [ -z "$line1" ]; then
+    line1="$part"
+  else
+    line1="$line1$sep$part"
+  fi
+done
+
+# Second line: model, context, cost (original order)
+line2_parts=()
+
 # Model
 if [ -n "$model" ]; then
-  parts+=("$(printf "${MAGENTA}⚙ %s${RESET}" "$model")")
+  line2_parts+=("$(printf "${MAGENTA}⚙ %s${RESET}" "$model")")
 fi
 
 # Context usage
 if [ -n "$used_pct" ]; then
-  parts+=("$(printf "${ctx_color}≡ ctx %d%%${RESET}" "$used_int")")
+  line2_parts+=("$(printf "${ctx_color}≡ ctx %d%%${RESET}" "$used_int")")
 fi
 
 # Cost (no symbol per request)
 if [ -n "$cost" ]; then
   cost_fmt=$(awk -v c="$cost" 'BEGIN { if (c < 0.01) printf "< $0.01"; else printf "$%.2f", c }')
-  parts+=("$(printf "${DIM}%s${RESET}" "$cost_fmt")")
+  line2_parts+=("$(printf "${DIM}%s${RESET}" "$cost_fmt")")
 fi
 
-# Join with separator
-result=""
-sep="$(printf "${DIM} · ${RESET}")"
-for part in "${parts[@]}"; do
-  if [ -z "$result" ]; then
-    result="$part"
+# Join second line
+line2=""
+for part in "${line2_parts[@]}"; do
+  if [ -z "$line2" ]; then
+    line2="$part"
   else
-    result="$result$sep$part"
+    line2="$line2$sep$part"
   fi
 done
 
-printf "%b" "$result"
+# Output
+if [ -n "$line2" ]; then
+  printf "%b\n%b" "$line1" "$line2"
+else
+  printf "%b" "$line1"
+fi
