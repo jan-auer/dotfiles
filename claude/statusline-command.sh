@@ -14,6 +14,7 @@ DIM="\033[2m"
 
 cwd=$(echo "$input" | jq -r '.workspace.project_dir // .cwd // ""')
 model=$(echo "$input" | jq -r '.model.display_name // ""')
+effort=$(echo "$input" | jq -r '.effort.level // empty')
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 
@@ -99,9 +100,21 @@ done
 # Second line: model, context, cost (original order)
 line2_parts=()
 
-# Model
+# Model + effort level
 if [ -n "$model" ]; then
-  line2_parts+=("$(printf "${MAGENTA}⚙ %s${RESET}" "$model")")
+  if [ -n "$effort" ]; then
+    case "$effort" in
+      low)    effort_color="$GREEN" ;;
+      medium) effort_color="$BLUE" ;;
+      high)   effort_color="$YELLOW" ;;
+      xhigh)  effort_color="$YELLOW" ;;
+      max)    effort_color="$RED" ;;
+      *)      effort_color="$DIM" ;;
+    esac
+    line2_parts+=("$(printf "${MAGENTA}⚙ %s ${effort_color}[%s]${RESET}" "$model" "$effort")")
+  else
+    line2_parts+=("$(printf "${MAGENTA}⚙ %s${RESET}" "$model")")
+  fi
 fi
 
 # Context usage
