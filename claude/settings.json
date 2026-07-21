@@ -130,6 +130,7 @@
       "Read(~/.claude/skills/**)",
       "Read(~/.claude/rules/**)",
       "Read(./.claude/plans/**)",
+      "Read(./.cargo/registry/src/**)",
       "WebSearch",
       "WebFetch"
     ],
@@ -143,5 +144,9 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "plansDirectory": "./.claude/plans"
+  "plansDirectory": "./.claude/plans",
+  "tui": "fullscreen",
+  "theme": "auto",
+  "autoCompactEnabled": false,
+  "voiceEnabled": true
 }

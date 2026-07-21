@@ -54,6 +54,7 @@ Treat these anti-patterns as bugs:
 - Adding dependencies without checking for existing equivalents in the project
 - Duplicating logic that already exists elsewhere in the codebase
 - Leaving `TODO` or placeholder comments instead of implementing the actual logic
+- Using abbreviated version specifiers (e.g., `"0.16"`) when adding dependencies — always use the full version number (e.g., `"0.16.3"`)
 
 # Verification
 
@@ -78,6 +79,8 @@ Never run recursive operations (`ls -R`, `find`, `grep -r`, `rg`, `glob`, etc.) 
 **`index.lock` failures**: If a git operation fails because `.git/index.lock` exists, retry the operation once. If it fails again, ask the user what to do — do not delete the lock file unilaterally.
 
 Prefer built-in tools over shell equivalents for file exploration: **Glob** over `ls`/`find`, **Grep** over `grep`/`rg`, **Read** over `cat`/`head`/`tail`. Do not use `ls` via Bash to explore project structure.
+
+**Use WebFetch for all URL fetching.** Never use `curl` via Bash to fetch URLs during research or investigation. Bash tool calls require explicit user permission approval; WebFetch does not. Only fall back to `curl` via Bash for authenticated endpoints where WebFetch cannot reach and no MCP tool is available.
 
 **Never use `gh api` for GitHub data that `gh` subcommands can retrieve.** The `gh api` command is not permitted. Use structured `gh` commands with `--json` instead:
 
