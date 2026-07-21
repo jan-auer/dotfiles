@@ -4,3 +4,6 @@ init/90_local.sh
 # Claude Code project-local state
 .claude/plans/
 .claude/settings.local.json
+
+# Vendored skills
+claude/skills/gh-stack
