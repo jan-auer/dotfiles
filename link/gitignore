@@ -17,3 +17,5 @@ Thumbs.db
 Session.vim
 .netrwhist
 *~
+
+**/.claude/settings.local.json
