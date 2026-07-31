@@ -7,18 +7,16 @@ paths:
 
 ## Safety
 
-- No `.unwrap()` in non-test code without `// INVARIANT:` comment explaining why it cannot fail
+- `.unwrap()` in non-test code is strongly discouraged. Use structural and type-safe alternative.
+- Where unwrapping is needed, use `expect` with a descriptive message and add an `// INVARIANT:` comment explaining why it cannot fail
 - Every `unsafe` block needs a `// SAFETY:` comment
 
 ## Code Style
 
 - Group imports in three blocks separated by a blank line, in this order: (1) `std`/`core`/`alloc`, (2) external crates, (3) `self`/`super`/`crate`. This matches rustfmt's `group_imports = "StdExternalCrate"`.
-- No wildcard match arms (`_`) on project-owned enums — handle all variants explicitly
 - No wildcard imports except test modules and designed preludes
-- No complex expressions (chains, closures, async calls) in control flow positions (`match`, `if let`, `let else`, `for`) — extract into a named variable first
-- When matching `Option`/`Result` only to early-return on one variant, prefer `let ... else` over `match`
+- Extract complex expressions (chains, closures, async calls) that create more than a single line wrapping from control flow positions (`match`, `if let`, `let else`, `for`) into a named variable first.
 - Conversion prefixes: `as_` (free, borrow→borrow), `to_` (expensive, borrow→owned), `into_` (owned→owned); no bare `from_` when `to_`/`into_` is more ergonomic
-- Consistent word order across related names within a crate
 
 ## Verification
 
