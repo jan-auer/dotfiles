@@ -38,5 +38,6 @@ paths:
 - Builder pattern for types with optional configuration or complex construction
 - No out-parameters — return tuples or structs instead of mutating `&mut` params
 - Struct fields private by default; expose via methods (adding a public field is a commitment)
+- On a restricted type (`pub(crate)`, `pub(super)`, private), members meant to be public are plain `pub` — do not repeating the sscope restriction. Internal helpers stay private as usual.
 - `Debug` on all public types
 - No trait bounds on data structs unless required — adding one later is a breaking change
