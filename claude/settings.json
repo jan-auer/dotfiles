@@ -144,14 +144,18 @@
       "Read(~/.claude/skills/**)",
       "Read(~/.claude/rules/**)",
       "Read(./.claude/plans/**)",
-      "Read(./.cargo/registry/src/**)",
+      "Read(~/.cargo/registry/src/**)",
+      "Read(~/.cargo/git/checkouts/**)",
+      "Read(~/.rustup/toolchains/*/lib/rustlib/src/rust/library/**)",
       "WebSearch",
       "WebFetch"
     ],
     "deny": [
       "Read(./.env)",
       "Read(./.env.*)",
-      "Bash(git -C *)"
+      "Bash(git -C *)",
+      "Edit(~/.cargo/**)",
+      "Edit(~/.rustup/**)"
     ]
   },
   "statusLine": {
