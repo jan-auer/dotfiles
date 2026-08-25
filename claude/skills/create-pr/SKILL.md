@@ -42,19 +42,24 @@ Stop and report if the working tree has nothing to ship — no uncommitted chang
 and no commits ahead of the base.
 
 If a PR already exists for the current branch, say so and ask whether the intent
-is a new PR (continue, Step 4 case 3) or a refresh of the existing one (hand off
-to the `pr-writer` skill and stop).
+is a new PR (continue, Step 4 case 3) or a refresh of the existing one.
 
 ## Step 3 — Draft the title and body
 
-Invoke the `pr-writer` skill (`sentry-skills:pr-writer`) to produce the title and
-body from the full branch diff. Override two of its instructions:
+PR titles use the same conventional form as commits: `<type>(<scope>): <Subject>`
+or `<type>: <Subject>`. Match the current dominant change, not the latest commit
+or a stale title.
 
-- Ignore its "Create or Update" section — this skill owns creation.
-- Ignore its draft-by-default rule — the default here is non-draft.
+Write the PR body for a reviewer who knows the product but not this change. Use
+ASD-STE100 English: short sentences, common words, active voice, and one idea
+per sentence. Avoid dense academic prose and unnecessary jargon.
 
-Keep its content rules: no `## Summary` heading, no test plan, no validation log,
-no file-by-file listing. Title format is `<type>(<scope>): <subject>`.
+Explain what this PR changes and why it matters. Add only context the diff
+cannot show. Keep the body short by default; add structure only when it helps.
+Omit empty or `N/A` sections, file-by-file narration, copied commit logs, and
+redundant diff summaries. Do not put `Checks`, `Verification`, `Test plan`, or
+similar validation sections in the PR body; put local check results only in the 
+final user report.
 
 ## Step 4 — Determine the branch
 
